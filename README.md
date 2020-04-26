@@ -1,2 +1,2 @@
 # helloMERN
-Simple boilerplate for a MERN stack app
+Simple CRUD site built using MERN stack JS
