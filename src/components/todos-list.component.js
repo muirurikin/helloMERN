@@ -21,11 +21,16 @@ export default class TodosList extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/todos/')
+        axios.get('http://localhost:4000/todos/'+this.props.match.params.id)
             .then(response => {
-                this.setState({ todos: response.data });
+                this.setState({
+                    todo_description: response.data.todo_description,
+                    todo_responsible: response.data.todo_responsible,
+                    todo_priority: response.data.todo_priority,
+                    todo_completed: response.data.todo_completed
+                })   
             })
-            .catch(function (error){
+            .catch(function (error) {
                 console.log(error);
             })
     }
